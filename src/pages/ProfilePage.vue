@@ -16,7 +16,3 @@ const placeholder = {
 }
 import Sneakers from "../components/sneakers/Sneakers.vue";
 </script>
-
-<style lang="scss" scoped>
-
-</style>

@@ -29,7 +29,3 @@ const placeholder = {
 import Sneakers from "../components/sneakers/Sneakers.vue";
 import Button from "../components/button/Button.vue";
 </script>
-
-<style lang="scss" scoped>
-
-</style>

@@ -27,7 +27,7 @@ const props = defineProps({
 
 </script>
 
-<style lang="scss" scoped>
+<style lang="css" scoped>
 .sneakers-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));

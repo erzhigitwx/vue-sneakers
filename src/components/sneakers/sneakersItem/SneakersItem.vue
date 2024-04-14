@@ -31,7 +31,3 @@ const props = defineProps({
   sneaker: Object
 })
 </script>
-
-<style lang="scss" scoped>
-
-</style>
