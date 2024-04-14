@@ -44,8 +44,10 @@
           <sneakers-item :sneaker="sneaker"/>
         </div>
       </div>
-      <div v-else-if="props.isLoading">
-        скелетон
+      <div v-else-if="props.isLoading" class="sneakers-container">
+        <div v-for="i in 6" :key="i">
+          <div class="h-[280px] bg-[#F2F2F2] rounded-[40px] hover:shadow-xl transition"/>
+        </div>
       </div>
       <EmptyState
           v-else
@@ -86,7 +88,9 @@ const handleFilterChange = (e) => {
 }
 
 watch(filters, async () => {
-  filteredSneakers.value = await Fetch(`https://27604ec439ebad94.mokky.dev/sneakers?sortBy=${filters.sortBy}&${filters.searchValue ? `&title=*${filters.searchValue}*` : ''}`);
+  filteredSneakers.value = await Fetch(
+      `https://27604ec439ebad94.mokky.dev/sneakers?sortBy=${filters.sortBy}&${filters.searchValue ? `&title=*${filters.searchValue}*` : ''}`
+  );
 });
 </script>
 
