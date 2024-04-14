@@ -13,7 +13,7 @@
         <EmptyState
             :title="'Заказ оформлен!'"
             :sub-title="'Ваш заказ #18 скоро будет передан курьерской доставке'"
-            :emoji="'/public/order-success-icon.png'" class="mt-[50%]"
+            :emoji="'/order-success-icon.png'" class="mt-[50%]"
             @click="props.changeIsDrawer(false)"/>
       </div>
       <template v-else>
@@ -47,7 +47,7 @@
           <EmptyState
               :title="'Корзина пустая'"
               :sub-title="'Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ.'"
-              :emoji="'/public/package-icon.png'" class="mt-[50%]"
+              :emoji="'/package-icon.png'" class="mt-[50%]"
               @click="props.changeIsDrawer(false)"/>
         </div>
       </template>
