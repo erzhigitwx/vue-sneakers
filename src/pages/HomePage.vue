@@ -11,13 +11,21 @@
       <img src="/public/banner.png" alt="banner"/>
     </div>
 
-    <Sneakers title="Все кроссовки" :sneakers="props.sneakers" class="mt-10" :placeholder="placeholder"/>
+    <Sneakers
+        class="mt-10"
+        title="Все кроссовки"
+        :sneakers="props.sneakers"
+        :placeholder="placeholder"
+        :filters="true"
+        :is-loading="isLoading"
+    />
   </div>
 </template>
 
 <script setup>
 const props = defineProps({
-  sneakers: Array
+  sneakers: Array,
+  isLoading: Boolean
 })
 
 const placeholder = {

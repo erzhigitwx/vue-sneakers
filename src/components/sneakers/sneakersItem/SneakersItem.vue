@@ -11,7 +11,7 @@
       </div>
     </div>
     <div>
-      <h6 class="font-normal text-[14px]">{{ props.sneaker.title }}}</h6>
+      <h6 class="font-normal text-[14px]">{{ props.sneaker.title }}</h6>
     </div>
     <div class="flex justify-between items-center mt-auto">
       <span class="flex flex-col gap-1">

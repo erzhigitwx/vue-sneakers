@@ -18,7 +18,7 @@
       </div>
       <template v-else>
         <template v-if="props.sneakers.length">
-          <div class="mt-8 flex flex-col gap-5 max-h-[70vh] overflow-y-auto scroll">
+          <div class="mt-8 flex flex-col gap-5 max-h-[60vh] sm:max-h-[70vh] overflow-y-auto scroll">
             <div v-for="sneaker of props.sneakers">
               <SneakersItemRow :sneaker="sneaker"/>
             </div>
