@@ -11,7 +11,7 @@ const props = defineProps({
 })
 
 const placeholder = {
-  emoji: "public/emoji-1.png",
+  emoji: "./emoji-1.png",
   title: "Закладок нет :(",
   subTitle: "Вы ничего не добавляли в закладки"
 }
