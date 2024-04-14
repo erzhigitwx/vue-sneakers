@@ -31,6 +31,11 @@
           <sneakers-item :sneaker="sneaker"/>
         </div>
       </div>
+      <div v-else-if="isFilteredSneakersLoading" class="sneakers-container">
+        <div v-for="i in 6" :key="i">
+          <div class="h-[280px] bg-[#F2F2F2] rounded-[40px] hover:shadow-xl transition"/>
+        </div>
+      </div>
       <EmptyState
           v-else
           :title="'Ничего не нашлось'"
@@ -44,7 +49,7 @@
           <sneakers-item :sneaker="sneaker"/>
         </div>
       </div>
-      <div v-else-if="props.isLoading" class="sneakers-container">
+      <div v-else-if="props.isSneakersLoading" class="sneakers-container">
         <div v-for="i in 6" :key="i">
           <div class="h-[280px] bg-[#F2F2F2] rounded-[40px] hover:shadow-xl transition"/>
         </div>
@@ -74,13 +79,14 @@ const props = defineProps({
     subTitle: String,
   },
   filters: Boolean,
-  isLoading: Boolean
+  isSneakersLoading: Boolean
 })
 
 const filters = reactive({
   sortBy: "name",
   searchValue: ""
 })
+const isFilteredSneakersLoading = ref(false);
 const filteredSneakers = ref([]);
 
 const handleFilterChange = (e) => {
@@ -88,9 +94,11 @@ const handleFilterChange = (e) => {
 }
 
 watch(filters, async () => {
+  isFilteredSneakersLoading.value = true;
   filteredSneakers.value = await Fetch(
       `https://27604ec439ebad94.mokky.dev/sneakers?sortBy=${filters.sortBy}&${filters.searchValue ? `&title=*${filters.searchValue}*` : ''}`
   );
+  isFilteredSneakersLoading.value = false;
 });
 </script>
 

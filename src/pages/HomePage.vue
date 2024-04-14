@@ -17,7 +17,7 @@
         :sneakers="props.sneakers"
         :placeholder="placeholder"
         :filters="true"
-        :is-loading="isLoading"
+        :is-sneakers-loading="isSneakersLoading"
     />
   </div>
 </template>
@@ -25,7 +25,7 @@
 <script setup>
 const props = defineProps({
   sneakers: Array,
-  isLoading: Boolean
+  isSneakersLoading: Boolean
 })
 
 const placeholder = {

@@ -14,7 +14,7 @@
           :count="count"
       />
       <div class="py-2.5 px-3 sm:py-5 sm:px-8 lg:py-11 lg:px-16 min-h-[100vh] sm:min-h-[70vh]">
-        <router-view :sneakers="sneakers" :is-loading="isLoading"/>
+        <router-view :sneakers="sneakers" :is-sneakers-loading="isSneakersLoading"/>
       </div>
     </div>
   </div>
@@ -28,7 +28,7 @@ import Drawer from "./components/drawer/Drawer.vue";
 import {Fetch} from "./utils/methods.js";
 
 const sneakers = ref([]);
-const isLoading = ref(false);
+const isSneakersLoading = ref(false);
 const isDrawer = ref(false);
 
 const count = computed(() => {
@@ -45,9 +45,9 @@ const changeIsDrawer = (newValue) => {
 }
 
 onMounted(async () => {
-  isLoading.value = true
+  isSneakersLoading.value = true
   sneakers.value = await Fetch("https://27604ec439ebad94.mokky.dev/sneakers");
-  isLoading.value = false
+  isSneakersLoading.value = false
 });
 
 watch(isDrawer, (newValue) => {
