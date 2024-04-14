@@ -1,7 +1,7 @@
 <template>
   <div class="fixed top-0 left-0 bottom-0 right-0 z-30 flex justify-between">
-    <div class="w-[66.6%] h-full backdrop-brightness-50" @click="props.changeIsDrawer(false)"/>
-    <div class="w-[33.3%] min-w-[380px] p-8 bg-white h-full flex flex-col"
+    <div class="w-0 sm:w-[66.6%] h-full backdrop-brightness-50" @click="props.changeIsDrawer(false)"/>
+    <div class="w-full sm:w-[33.3%] sm:min-w-[380px] p-5 sm:p-8 bg-white h-full flex flex-col"
          :class="{ 'justify-start': !props.sneakers.length || isConfirmed, 'justify-between': props.sneakers.length }">
       <div class="flex items-center justify-between">
         <h2 class="font-bold text-[24px]">Корзина</h2>
@@ -57,7 +57,7 @@
 </template>
 
 <script setup>
-import {computed, defineProps, ref} from "vue";
+import {computed, defineProps, onMounted, onUnmounted, ref} from "vue";
 import SneakersItemRow from "../sneakersItemRow/SneakersItemRow.vue";
 import Button from "../button/Button.vue";
 import EmptyState from "../emtyState/EmptyState.vue";
@@ -82,6 +82,10 @@ const handleConfirm = (sneakers) => {
     isConfirmed.value = false;
   }, 3000);
 };
-
-
 </script>
+
+<style>
+.drawer-open {
+  overflow: auto;
+}
+</style>

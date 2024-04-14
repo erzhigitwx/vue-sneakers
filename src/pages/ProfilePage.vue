@@ -10,9 +10,9 @@ const props = defineProps({
 })
 
 const placeholder = {
-  emoji: "/public/emoji-1.png",
-  title: "Закладок нет :(",
-  subTitle: "Вы ничего не добавляли в закладки"
+  emoji: "/public/emoji-2.png",
+  title: "У вас нет заказов",
+  subTitle: "Вы нищеброд? Оформите хотя бы один заказ."
 }
 import Sneakers from "../components/sneakers/Sneakers.vue";
 </script>

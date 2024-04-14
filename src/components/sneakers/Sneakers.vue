@@ -1,12 +1,13 @@
 <template>
-  <div class="flex flex-col gap-8">
+  <div class="flex flex-col gap-6 lg:gap-8">
     <h1 class="font-bold text-3xl">{{ props.title }}</h1>
     <div v-if="props.sneakers?.length" class="sneakers-container">
       <div v-for="sneaker of props.sneakers">
         <sneakers-item :sneaker="sneaker"/>
       </div>
     </div>
-    <EmptyState v-else :title="props.placeholder.title" :emoji="props.placeholder.emoji" :sub-title="props.placeholder.subTitle"/>
+    <EmptyState v-else :title="props.placeholder.title" :emoji="props.placeholder.emoji"
+                :sub-title="props.placeholder.subTitle"/>
   </div>
 </template>
 
@@ -30,8 +31,14 @@ const props = defineProps({
 <style lang="css" scoped>
 .sneakers-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   grid-auto-rows: 280px;
-  gap: 40px;
+  gap: 20px;
+  @media screen and (min-width: 1024px) {
+    gap: 40px;
+  }
+  @media screen and (min-width: 640px) {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  }
 }
 </style>

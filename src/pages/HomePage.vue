@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="flex justify-center">
-      <div class="flex flex-col gap-6 items-start justify-center w-96">
+      <div class="hidden lg:flex flex-col gap-6 items-start justify-center w-96">
         <span class="flex flex-col">
           <h1 class="text-[#8BB43C] font-bold text-[38px] leading-9">Stan Smith,</h1>
           <h1 class="font-bold text-[38px] leading-9">Forever!</h1>
@@ -11,7 +11,7 @@
       <img src="/public/banner.png" alt="banner"/>
     </div>
 
-    <Sneakers title="Все кроссовки" :sneakers="props.sneakers" class="mt-10"  :placeholder="placeholder"/>
+    <Sneakers title="Все кроссовки" :sneakers="props.sneakers" class="mt-10" :placeholder="placeholder"/>
   </div>
 </template>
 

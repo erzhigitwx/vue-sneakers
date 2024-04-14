@@ -4,8 +4,8 @@
       <img :src="props.emoji" alt="emoji" class="w-16 h-16"/>
 
       <div class="flex flex-col">
-        <h3 class="text-center font-semibold text-[24px]">{{ props.title }}}</h3>
-        <p class="text-center font-normal text-[16px]">{{ props.subTitle }}</p>
+        <h3 class="text-center font-semibold text-[24px]">{{ props.title }}</h3>
+        <p class="text-center font-normal text-[16px] text-gray-400">{{ props.subTitle }}</p>
       </div>
 
       <Button class="flex items-center justify-center gap-2" @click="router.back()">

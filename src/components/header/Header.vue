@@ -1,5 +1,5 @@
 <template>
-  <header class="p-8 flex justify-between border-b-2">
+  <header class="p-5 lg:p-8 flex flex-col gap-6 items-center md:flex-row md:justify-between border-b-2">
     <router-link to="/" class="flex gap-4 items-center">
       <img src="/public/logo.png" alt="logo" class="w-10 h-10"/>
       <div class="flex flex-col">
@@ -7,7 +7,7 @@
         <p class="text-gray-500">Магазин лучших кроссовок</p>
       </div>
     </router-link>
-    <nav class="flex gap-8 items-center select-none">
+    <nav class="flex gap-12 sm:gap-8 items-center select-none whitespace-nowrap overflow-x-auto scroll">
       <div class="flex gap-2 items-center cursor-pointer" @click="props.changeIsDrawer(!props.isDrawer)">
         <img src="/public/cart.svg" alt="basket"/>
         <p class="font-semibold text-gray-500 hover:text-gray-700">{{ props.count }} руб.</p>
